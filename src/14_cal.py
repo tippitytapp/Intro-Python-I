@@ -30,3 +30,35 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+import argparse
+
+parser = argparse.ArgumentParser(description='Display Calendar', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument('-month', type=int, default=datetime.now().month)
+parser.add_argument('-year', type=int, default=datetime.now().year)
+
+if len(sys.argv) == 1:
+    month=datetime.now().month
+    year=datetime.now().year
+    print(calendar.month(year, month))
+elif len(sys.argv) == 2:
+    month=int(sys.argv[1])
+    year=datetime.now().year
+    print(calendar.month(year, month))
+elif len(sys.argv) == 3:
+    month=int(sys.argv[1])
+    year=int(sys.argv[2])
+    print(calendar.month(year, month))
+else:
+    print(parser.print_help())
+
+
+# month=int(sys.argv[1])
+# year=int(sys.argv[2])
+# print(sys.argv[1])
+# for key, value in nargs:
+#   print(value)
+# print(nargs)
+# month = Namespace
+
+
+# print(parser)
