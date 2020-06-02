@@ -10,3 +10,10 @@ num = int(num)
 
 # YOUR CODE HERE
 
+def evens_or_odds(num):
+    if num % 2 == 0:
+        print('EVEN!')
+    else:
+        print('Odd')
+
+evens_or_odds(num)
